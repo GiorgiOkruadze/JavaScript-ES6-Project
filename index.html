@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- Include Gende Model -->
+    <script src="scripts/models/gender.model.js"></script>
+    <!-- Include Human Model -->
+    <script src="scripts/models/human.model.js"></script>
+    <!-- Include Helper Services -->
+    <script src="scripts/services/helpers.service.js"></script>
+    <!-- Inluclude Humans Collection Service-->
+    <script src="scripts/services/humans-collection.service.js"></script>
+    <!-- Include Human Html Rendered Service -->
+    <script src="scripts/services/render-human-html.service.js"></script>
+    <!-- Include All View Controller Service -->
+    <script src="scripts/services/view-controller-service.js"></script>
+</head>
+<body>
+    <main>
+        <aside class="left">
+            <h1>Person Registration</h1>
+            <article class="register-person">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your Image</label>
+                    <input type="text" class="form-control" id="image" placeholder="Enter image url">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your FullName</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your gender</label>
+                    <select name="gender" id="inputState" class="form-control gender">
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your Mail</label>
+                    <input type="text" class="form-control" id="mail" placeholder="Enter mail address">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your bio</label>
+                    <input type="text" class="form-control" id="bio" placeholder="Enter personal info">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your fb page</label>
+                    <input type="text" class="form-control" id="link" placeholder="Enter facebook link">
+                </div>
+                <button id="registerHumanBtn" class="btn btn-primary register">Save</button>
+            </article>
+        </aside>
+        <aside class="right">
+            <h1>Persons</h1>
+            <article class="persons-boxes">
+                    
+            </article>
+        </aside>
+    </main>
+
+    <script> const viewControllerService = new ViewControllerService(); </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
