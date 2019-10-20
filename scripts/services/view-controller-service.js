@@ -1,12 +1,22 @@
 class ViewControllerService {
 
     constructor(){
-        this.HumanHtmlRenderer = new RenderHumanHtmlService();
-        this.HumanCollectionController = new HumansCollectionService();
+        //services
+        this.humanHtmlRenderer = new RenderHumanHtmlService();
+        this.humanCollectionController = new HumansCollectionService();
+        this.alertService = new SweetAlertService(); 
+        this.validationService = new InputValidationService();
+
+
         this.PersonsArea = this.getPersonsAreaHtmlElement();
         this.RegisterHumanButton = this.getRegisterHumanHtmlElement();
         this.renderAllHumansInArea();
         this.addListenerToRegisterBtn();
+        this.addEventOnInputsClick();
+    }
+
+    addEventOnInputsClick(){
+        this.validationService.addEventOnInputsClick(".check-inp");
     }
 
     getPersonsAreaHtmlElement() {
@@ -25,9 +35,14 @@ class ViewControllerService {
         console.log(this.RegisterHumanButton);
         this.RegisterHumanButton
         .addEventListener("click",function(){
+            if(!self.validationService.checkInputsValidation(".check-inp")){
+                self.alertService.getErrorMessage();
+                return;
+            }
+            
             let tmp = self.createHumanObjectFromInputValues();
-            self.HumanCollectionController.saveHuman(tmp);
-            self.HumanHtmlRenderer.renderHumanInArea(self.PersonsArea,tmp);
+            self.humanCollectionController.saveHuman(tmp);
+            self.humanHtmlRenderer.renderHumanInArea(self.PersonsArea,tmp);
             self.cleanAllInputsAfterSubmitting();
         })
     }
@@ -45,15 +60,15 @@ class ViewControllerService {
 
     renderAllHumansInArea() {
         const self = this;
-        const allHumans = this.HumanCollectionController.getHumans();
+        const allHumans = this.humanCollectionController.getHumans();
         allHumans.forEach(o => {
-            self.HumanHtmlRenderer.renderHumanInArea(self.PersonsArea,o);
+            self.humanHtmlRenderer.renderHumanInArea(self.PersonsArea,o);
         });
     }
 
 
     cleanAllInputsAfterSubmitting(){
-        let inputs = document.querySelectorAll(".form-control");
+        let inputs = document.querySelectorAll(".check-inp");
         inputs.forEach(o => {
             o.value = "";
         });

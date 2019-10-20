@@ -1,6 +1,5 @@
 class SweetAlertService {
     
-
     //this function get function es a parameter (C# delegate like action)
     confirmationAlertOnElementDelete(action) {
         swal({
@@ -20,5 +19,23 @@ class SweetAlertService {
               swal("Your imaginary file is safe!");
             }
           });
+    }
+
+    getSuccessAler(){
+      swal({
+        title: "Success !",
+        text: "Operation passed successfuly",
+        icon: "success",
+        button: "Ok",
+      });
+    }
+
+    getErrorMessage(){
+      swal({
+        title: "Error !",
+        text: "Operation failed, pleace try again",
+        icon: "error",
+        button: "Ok!",
+      });
     }
 }

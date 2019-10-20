@@ -76,6 +76,8 @@ main aside:last-child {
 .card {
     position: relative;
     margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .cross {

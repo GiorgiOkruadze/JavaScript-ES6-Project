@@ -1,6 +1,5 @@
 class InputValidationService {
     constructor(){
-        this.addEventOnInputsClick();
     }
 
     checkInputsValidation(inputSelector) {
@@ -26,7 +25,7 @@ class InputValidationService {
 
 
     addRedBorderToInputs(inp){
-        inp.style.border = "1px solid rgb(200,0,0)";
+        inp.style.border = "2px solid rgb(200,0,0)";
     }
 
     addDefaultBorder(inp){
@@ -35,9 +34,9 @@ class InputValidationService {
 
     addEventOnInputsClick(selector) {
         const self = this;
-        var inputs = document.querySelectorAll(inputSelector);
+        var inputs = document.querySelectorAll(selector);
         inputs.forEach(o => {
-            o.addEventOnInputsClick("click",function(){
+            o.addEventListener("click",function(){
                 self.addDefaultBorder(this);
             })
         })
