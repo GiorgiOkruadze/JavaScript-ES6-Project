@@ -12,6 +12,10 @@ function deleteCurrentUser(id) {
     });
 }
 
+function sentMessageToUser(id){
+    console.log(id);
+}
+
 //Function to Clear AllInputs values
 function ClearInputs(){
     let inputs = document.querySelectorAll(".form-control");

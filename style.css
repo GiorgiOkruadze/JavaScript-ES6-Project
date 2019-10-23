@@ -80,18 +80,34 @@ main aside:last-child {
     overflow: hidden;
 }
 
-.cross {
+.fa-times {
     position: absolute;
     top:10px;
     right: 10px;
     width:20px;
     height: 20px;
     z-index: 10;
-    opacity: 0.6;
-    transition: 0.4s;
+    opacity: 0.5;
+    transition: 0.5s;
     cursor: pointer;
+    font-size: 25px;
+    color: rgb(3,3,3);
 }
 
-.cross:hover {
+.fa-times:hover {
+    opacity: 1;
+}
+
+.fa-envelope {
+    position: absolute;
+    top: 45px;
+    right: 12px;
+    opacity: 0.5;
+    color: #D9332E;
+    font-size: 21px;
+    transition: 0.5s;
+}
+
+.fa-envelope:hover {
     opacity: 1;
 }
