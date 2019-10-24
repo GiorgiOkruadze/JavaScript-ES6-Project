@@ -10,7 +10,6 @@ class HumansCollectionService {
         //create class fields
         this.HumansCollection = this.getHumansCollectionFromLocalStorage();
         this.HelperMethods = new HelperMethodService();
-        this.HumansCollection = new Array();
 
         return this;
     }
@@ -40,7 +39,7 @@ class HumansCollectionService {
         try {
             return JSON.parse(localStorage["HumansCollection"]);
         } catch(arr) {
-            new Array();
+            return new Array();
         }
     }
 }
